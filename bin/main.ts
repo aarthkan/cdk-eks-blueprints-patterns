@@ -26,6 +26,14 @@ new NginxIngressConstruct().buildAsync(app, 'nginx').catch(() => {
 import StarterConstruct from '../lib/starter-construct';
 new StarterConstruct().build(app, 'starter');
 
+//-------------------------------------------
+// Security Starter Cluster with barebone infrastructure with GuardDuty and SecurityHub.
+//-------------------------------------------
+
+
+import StarterSecurityConstruct from '../lib/starter-security-construct';
+new StarterSecurityConstruct().build(app, 'starter-security');
+
 
 //-------------------------------------------
 // Single Cluster with multiple teams.
