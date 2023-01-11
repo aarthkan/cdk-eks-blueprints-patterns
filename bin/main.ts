@@ -129,6 +129,14 @@ new BottleRocketConstruct().build(app, 'bottlerocket');
 import GenericClusterConstruct from '../lib/generic-cluster-construct';
 new GenericClusterConstruct().build(app, 'generic-cluster');
 
+//-------------------------------------------
+// Single cluster with custom configuration and security (GuardDuty & SecurityHub)
+//-------------------------------------------
+// import { TeamPlatform } from '../lib/teams/team-platform';
+// const teamPlatform = new TeamPlatform(account);
+import GenericSecurityClusterConstruct from '../lib/generic-security-cluster-construct';
+new GenericSecurityClusterConstruct().build(app, 'generic-security-cluster');
+
 import DynatraceOperatorConstruct from '../lib/dynatrace-construct';
 new DynatraceOperatorConstruct().buildAsync(app, "dynatrace-operator").catch(() => {
     logger.info("Dynatrace pattern is not setup due to missing secrets for dynatrace-tokens.");
